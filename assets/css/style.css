@@ -1,0 +1,181 @@
+/* ===== فونت وزیرمتن (محلی): یک فایل متغیر که همه وزن‌ها را پوشش می‌دهد ===== */
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("../fonts/Vazirmatn-VariableFont.ttf") format("truetype");
+  font-weight: 100 900;   /* بازه وزن‌های پشتیبانی‌شده */
+  font-display: swap;     /* تا لود شدن فونت، متن با فونت پیش‌فرض دیده می‌شود */
+}
+
+/* ===== ۱. انتخابگر عنصر: روی همه تگ‌های body اثر می‌گذارد ===== */
+body {
+  font-family: "Vazirmatn", Tahoma, Arial, sans-serif; /* نوع فونت */
+  background-color: #f4f6f8;              /* رنگ پس‌زمینه */
+  color: #333;                            /* رنگ متن */
+  line-height: 1.8;                       /* فاصله بین خطوط */
+  max-width: 800px;                       /* حداکثر عرض صفحه */
+  margin: 0 auto;                         /* وسط‌چین کردن صفحه */
+  padding: 20px;                          /* فاصله داخلی */
+}
+
+/* ===== ۲. گروه‌بندی انتخابگرها: چند تگ با هم ===== */
+h1, h2, h3 {
+  color: #1a5276;
+}
+
+h1 {
+  text-align: center;  /* وسط‌چین کردن متن */
+}
+
+h2 {
+  border-bottom: 2px solid #1a5276; /* خط زیر عنوان */
+  padding-bottom: 5px;
+}
+
+/* ===== ۳. استایل دادن به هدر و منو ===== */
+header {
+  background-color: #1a5276;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;  /* گوشه‌های گرد */
+  text-align: center;
+}
+
+header h1 {
+  color: white;  /* انتخابگر تو در تو: فقط h1 داخل header */
+}
+
+nav a {
+  color: #f9e79f;
+  text-decoration: none;  /* حذف خط زیر لینک */
+  margin: 0 10px;
+}
+
+/* ===== ۴. حالت hover: وقتی ماوس روی عنصر می‌رود ===== */
+nav a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+/* ===== ۵. انتخابگر کلاس و id (در صورت افزودن class یا id به تگ‌ها) ===== */
+/* برای استفاده: <p class="highlight"> */
+.highlight {
+  background-color: #fcf3cf;
+  padding: 10px;
+}
+
+/* ===== ۶. بخش‌ها: مدل جعبه (box model) ===== */
+section {
+  background-color: white;
+  padding: 15px 20px;          /* فاصله داخلی (بین محتوا و لبه) */
+  margin: 20px 0;              /* فاصله بیرونی (بین جعبه‌ها) */
+  border: 1px solid #ddd;      /* حاشیه */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* سایه */
+}
+
+/* ===== ۷. لیست‌ها ===== */
+ul {
+  list-style-type: square;  /* شکل نقطه‌ها */
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+/* ===== ۸. جدول ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;  /* ادغام حاشیه سلول‌ها */
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #1a5276;
+  color: white;
+}
+
+/* انتخاب سطرهای زوج جدول */
+tbody tr:nth-child(even) {
+  background-color: #eaf2f8;
+}
+
+/* ===== ۹. فرم ===== */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  box-sizing: border-box;  /* padding و border داخل عرض حساب شوند */
+  font-family: inherit;    /* همان فونت والد */
+}
+
+/* حالت focus: وقتی داخل فیلد کلیک شده */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #1a5276;
+  box-shadow: 0 0 5px rgba(26, 82, 118, 0.5);
+}
+
+button {
+  background-color: #1a5276;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 5px;
+  cursor: pointer;                 /* شکل اشاره‌گر ماوس */
+  transition: background-color 0.3s; /* انیمیشن نرم تغییر رنگ */
+}
+
+button:hover {
+  background-color: #2e86c1;
+}
+
+/* ===== ۱۰. فوتر ===== */
+footer {
+  text-align: center;
+  color: #777;
+  font-size: 14px;
+}
+
+/* ===== ۱۱. واکنش‌گرا (Responsive): فقط برای صفحه‌های کوچک مثل موبایل ===== */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  nav a {
+    display: block;  /* لینک‌ها زیر هم قرار بگیرند */
+    margin: 5px 0;
+  }
+}
+
+/* ===== ۱۲. حالت شب: وقتی جاوااسکریپت کلاس dark-mode را به body اضافه کند ===== */
+body.dark-mode {
+  background-color: #1c1c1c;
+  color: #eee;
+}
+
+body.dark-mode section {
+  background-color: #2b2b2b;
+  border-color: #444;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: #85c1e9;
+}
+
+body.dark-mode header h1 {
+  color: white;
+}
